@@ -36,3 +36,35 @@
     transform: rotate(360deg);
   }
 }
+
+.navBar{
+  padding-top: 10px;
+  display: flex;
+  justify-content: space-around;
+  background-color: #282c34;
+  align-items: center;
+}
+
+#logoNavBar {
+  display: flex;
+  align-self: center;
+  align-items: center;
+  box-sizing: border-box;
+  height: 55px;
+  width: 55px;
+}
+
+.navLink {
+  background-color: #3c414a;
+  color: #dae3e3;
+  font-weight: bold;
+  border-radius: 16px;
+  border: #3c414a;
+  padding: 4px 9px;
+  transition: all 0.2s ease-out; 
+}
+
+.navLink:hover {
+  background: #363a518a;
+  border-radius: 10px;
+  box-shadow: 0 1px 2.4px #5d636675, 0 2px 6px #5d939d4f, 0 2px 15px #76809366; }
