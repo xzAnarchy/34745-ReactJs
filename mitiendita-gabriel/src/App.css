@@ -45,15 +45,6 @@
   align-items: center;
 }
 
-#logoNavBar {
-  display: flex;
-  align-self: center;
-  align-items: center;
-  box-sizing: border-box;
-  height: 55px;
-  width: 55px;
-}
-
 .navLink {
   background-color: #3c414a;
   color: #dae3e3;
