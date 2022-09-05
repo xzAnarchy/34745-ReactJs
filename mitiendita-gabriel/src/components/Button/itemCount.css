@@ -1,0 +1,28 @@
+.botonPrueba{
+    border-radius: 20px;
+    padding: 15px;
+    color: #ffffff;
+    background-color: #3ecdcd;
+
+}
+
+.itemCount {
+    display: flex;
+    align-items: center;
+}
+
+.count {
+    margin: 5px 15px;
+}
+
+.botonesStock {
+    padding-bottom: 10px;
+    text-align: center;
+    color: #ffffff;
+    background-color: #3ecdcd;
+    border-radius: 90px;
+}
+
+.plusMinus {
+    font-weight: bold;
+}

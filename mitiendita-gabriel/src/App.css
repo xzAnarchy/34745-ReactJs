@@ -59,3 +59,16 @@
   background: #363a518a;
   border-radius: 10px;
   box-shadow: 0 1px 2.4px #5d636675, 0 2px 6px #5d939d4f, 0 2px 15px #76809366; }
+
+  .cartQuantity {
+    color: white;
+    background-color: red;
+    padding: 0.2em 0.3em;
+    position: absolute;
+    margin-left: 20px;
+    left: 190px;
+    top: 10px;
+    border: solid 2px red;
+    border-radius: 15px;
+    font-weight: bolder;
+}
