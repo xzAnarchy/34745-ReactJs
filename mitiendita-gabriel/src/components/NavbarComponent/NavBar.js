@@ -1,5 +1,5 @@
 import 'materialize-css/dist/css/materialize.min.css'
-import CartWidget from './CartWidget/CartWidget';
+import CartWidget from '../CartWidget/CartWidget';
 
 const NavBar = ({ item }) => {
     return (

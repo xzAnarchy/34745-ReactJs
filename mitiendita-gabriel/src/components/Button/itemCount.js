@@ -7,9 +7,9 @@ const ItemCount = ({ item, minus, plus }) => {
     return (
         <>
             <div className='itemCount'>
-                <button onClick={plus} className='botonesStock'><span className='plusMinus'>+</span></button>
-                <p className='count'>{item}</p>
                 <button onClick={minus} className='botonesStock'><span className='plusMinus'>-</span></button>
+                <p className='count'>{item}</p>
+                <button onClick={plus} className='botonesStock'><span className='plusMinus'>+</span></button>
             </div>
             <div><button onClick={plus} className='botonPrueba'>Agregar al Carrito</button></div>
         </>

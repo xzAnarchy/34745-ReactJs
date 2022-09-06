@@ -1,8 +1,10 @@
 import logo from './logo.svg';
 import './App.css';
-import NavBar from './components/NavBar';
+import NavBar from './components/NavbarComponent/NavBar';
 import CointainerComponent from './components/ContainerComponent/CointainerComponent';
-import ItemCount from './components/Button/itemCount'
+import ItemCount from './components/Button/itemCount';
+import ItemList from './components/ItemList/ItemList';
+import ItemListC from './components/ItemListC/ItemListC';
 import { useState, useEffect } from 'react';
 
 
@@ -25,6 +27,7 @@ function App() {
         <img src={logo} className="App-logo" alt="logo" />
         <CointainerComponent />
         <ItemCount item={item} plus={plus} minus={minus} />
+        <ItemListC />
       </header>
     </div>
   );
