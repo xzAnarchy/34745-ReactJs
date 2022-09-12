@@ -5,7 +5,6 @@ const ItemList = ({ lista }) => {
             {lista.map((product) => (
                 <div key={product.id}>
                     <Item
-
                         title={product.title}
                         price={product.price}
                         image={product.image}

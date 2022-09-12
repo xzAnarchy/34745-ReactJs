@@ -2,7 +2,7 @@ import data from "../mockData.js"
 import { useEffect, useState } from "react";
 import ItemList from "../ItemList/ItemList";
 
-const ItemListC = () => {
+const ItemListContainer = () => {
     const [productList, setProductList] = useState([])
 
     useEffect(() => {
@@ -12,7 +12,6 @@ const ItemListC = () => {
             })
             .catch(error => console.log(error))
     }, []);
-
 
     const getProducts = new Promise((resolve, reject) => {
         setTimeout(() => {
@@ -29,4 +28,4 @@ const ItemListC = () => {
 
 };
 
-export default ItemListC
+export default ItemListContainer

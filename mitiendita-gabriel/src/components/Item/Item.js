@@ -1,4 +1,3 @@
-
 const Item = ({ title, price, image }) => {
     return (
         <div>
