@@ -1,0 +1,10 @@
+.itemContainer{
+ background-color: #313641;
+    border: #394255; 
+    border-width: 10px;
+    border-radius: 15px;
+    display: flex;
+    justify-content: space-evenly;
+    margin: 20px 40px;
+    padding: 40px 0;
+}
