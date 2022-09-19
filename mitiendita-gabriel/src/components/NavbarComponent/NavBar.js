@@ -22,13 +22,13 @@ const NavBar = ({ item }) => {
                 </li>
                 <li>
                     <NavLink
-                        to={"productos/computadoras"}
+                        to={"/category/computadoras"}
                         className={({ isActive }) => (isActive ? 'desactivated' : 'navLink')}>
                         Computadoras
                     </NavLink>
                 </li>
                 <li>
-                    <NavLink to={"celulares"}
+                    <NavLink to={"/category/celulares"}
                         className={({ isActive }) => (isActive ? 'desactivated' : 'navLink')}>
                         Celulares
                     </NavLink>

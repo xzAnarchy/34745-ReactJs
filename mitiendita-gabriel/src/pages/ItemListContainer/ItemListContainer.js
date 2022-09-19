@@ -1,11 +1,32 @@
 import data from "../../components/mockData.js"
 import { useEffect, useState } from "react";
+import { useParams, useSearchParams } from "react-router-dom";
 import ItemList from "../../components/ItemList/ItemList";
 
 const ItemListContainer = () => {
     const [productList, setProductList] = useState([])
+    const { categoryName } = useParams()
+
 
     useEffect(() => {
+        setTimeout(() => {
+            getProducts()
+        }, 2000);
+    }, [categoryName]);
+
+    const getProducts = async () => {
+        if (categoryName) {
+            const response = await data.filter(
+                (item) => item.category === categoryName
+            );
+            setProductList(response)
+        } else {
+            const response = await data;
+            setProductList(response)
+        }
+    }
+
+    /* useEffect(() => {
         getProducts
             .then((response) => {
                 setProductList(response)
@@ -17,8 +38,7 @@ const ItemListContainer = () => {
         setTimeout(() => {
             resolve(data)
         }, 2000);
-    });
-
+    }); */
 
     return (
         <>

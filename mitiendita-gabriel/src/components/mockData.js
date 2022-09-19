@@ -7,7 +7,6 @@ const data = [
         price: '100',
         image: 'https://www.mantenimientosfrioinverter.com/wp-content/uploads/2021/08/BLSTKAG-WRD.jpg'
     },
-
     {
         id: '2',
         title: 'Nevera',
@@ -27,7 +26,7 @@ const data = [
     {
         id: '4',
         title: 'Celular1',
-        category: 'Phone',
+        category: 'celulares',
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
         price: '400',
         image: 'https://www.freeiconspng.com/thumbs/iphone-x-pictures/apple-iphone-x-pictures-5.png'
@@ -44,7 +43,7 @@ const data = [
     {
         id: '6',
         title: 'Celular2',
-        category: 'Phone',
+        category: 'celulares',
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
         price: '200',
         image: 'https://www.freeiconspng.com/thumbs/iphone-x-pictures/apple-iphone-x-pictures-5.png'
@@ -60,7 +59,7 @@ const data = [
     {
         id: '8',
         title: 'Celular3',
-        category: 'Phone',
+        category: 'celulares',
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
         price: '400',
         image: 'https://www.freeiconspng.com/thumbs/iphone-x-pictures/apple-iphone-x-pictures-5.png'
