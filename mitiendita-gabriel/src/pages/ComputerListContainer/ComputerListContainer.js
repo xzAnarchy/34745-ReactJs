@@ -4,13 +4,13 @@ import data from "../../components/mockData.js"
 import { useParams } from "react-router-dom"
 
 const ComputerContainer = () => {
-    const { type } = useParams()
+    const { category } = useParams()
     const [item, setItem] = useState([])
-    console.log(type)
+    console.log(category)
     useEffect(() => {
         getItem
             .then((response) => {
-                setItem(response.find(el => el.type == type))
+                setItem(response.find(el => el.category == category))
             })
             .catch(error => console.log(error))
     }, []);
