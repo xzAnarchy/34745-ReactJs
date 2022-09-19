@@ -22,7 +22,7 @@ const NavBar = ({ item }) => {
                 </li>
                 <li>
                     <NavLink
-                        to={"computadoras"}
+                        to={"productos/computadoras"}
                         className={({ isActive }) => (isActive ? 'desactivated' : 'navLink')}>
                         Computadoras
                     </NavLink>
@@ -41,9 +41,6 @@ const NavBar = ({ item }) => {
                     </NavLink>
                 </li>
             </ul>
-
-
-
         </div>
     )
 }

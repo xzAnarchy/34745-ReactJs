@@ -10,8 +10,8 @@ const CartWidget = () => {
 
     // }
     return (
-        <div>
-            <a className='iconoNavBar' href='#'><img src={Icon} alt="icono carrito" className='cartIcon' /></a>
+        <div className='iconoNavBar'>
+            <img src={Icon} alt="icono carrito" className='cartIcon' />
         </div>
     )
 }

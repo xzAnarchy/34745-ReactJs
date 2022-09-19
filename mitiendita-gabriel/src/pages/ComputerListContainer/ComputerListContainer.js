@@ -1,14 +1,16 @@
 import { useEffect, useState } from "react"
-import ItemDetail from "../ItemDetail/ItemDetail"
-import data from "../mockData.js"
+import ComputerList from "../../components/ComputerList/ComputerList"
+import data from "../../components/mockData.js"
+import { useParams } from "react-router-dom"
 
-const ItemDetailContainer = () => {
+const ComputerContainer = () => {
+    const { type } = useParams()
     const [item, setItem] = useState([])
-
+    console.log(type)
     useEffect(() => {
         getItem
             .then((response) => {
-                setItem(response.find(el => el.id === 1))
+                setItem(response.find(el => el.type == type))
             })
             .catch(error => console.log(error))
     }, []);
@@ -21,9 +23,9 @@ const ItemDetailContainer = () => {
 
     return (
         <>
-            <ItemDetail lista={item} />
+            {item && <ComputerList lista={item} />}
         </>
     )
 }
 
-export default ItemDetailContainer
+export default ComputerContainer
