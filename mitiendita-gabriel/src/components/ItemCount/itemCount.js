@@ -1,17 +1,18 @@
 import './itemCount.css'
-import { useState, useEffect } from 'react'
+import { useEffect } from 'react';
 
-const ItemCount = () => {
+const ItemCount = ({ setItem, item, stock }) => {
 
-    const stock = 5
-    const [item, setItem] = useState(0)
-    const plus = () => item <= stock - 1 ? setItem(item + 1) : alert('Se alzanzo el stock maximo');
-    const minus = () => !item <= 0 ? setItem(item - 1) : alert('No has seleccionado ningun articulo');
-
-    useEffect(() => {
-        console.log('Item se actualizo')
-
-    }, [item])
+    const plus = () => {
+        item <= stock - 1
+            ? setItem(item + 1)
+            : alert('Se alzanzo el stock maximo');
+    }
+    const minus = () => {
+        !item <= 0
+            ? setItem(item - 1)
+            : alert('No has seleccionado ningun articulo');
+    }
 
     return (
         <>
@@ -20,7 +21,7 @@ const ItemCount = () => {
                 <p className='count'>{item}</p>
                 <button onClick={plus} className='botonesStock'><span className='plusMinus'>+</span></button>
             </div>
-            <div><button onClick={plus} className='botonPrueba'>Agregar al Carrito</button></div>
+            <div><button className='botonPrueba'>Agregar al Carrito</button></div>
         </>
     )
 }

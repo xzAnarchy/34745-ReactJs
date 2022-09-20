@@ -14,14 +14,12 @@ const ItemListContainer = () => {
         }, 2000);
     }, [categoryName]);
 
-    const getProducts = async () => {
+    const getProducts = () => {
         if (categoryName) {
-            const response = await data.filter(
-                (item) => item.category === categoryName
-            );
+            const response = data.filter((item) => item.category === categoryName);
             setProductList(response)
         } else {
-            const response = await data;
+            const response = data;
             setProductList(response)
         }
     }
