@@ -20,8 +20,10 @@ export const CartProvider = ({ children }) => {
     const isInCart = (id) => {
         return cart.some((item) => item.id === id)
     }
-
-    const deleteAll = () => {
+    const removeItem = (id) => {
+        cart.splice(cart.findIndex(item => item.id === id), 1)
+    }
+    const clear = () => {
         setCart([])
     }
 
