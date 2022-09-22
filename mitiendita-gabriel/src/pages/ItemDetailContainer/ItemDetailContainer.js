@@ -23,7 +23,7 @@ const ItemDetailContainer = () => {
 
     return (
         <>
-            {item && <ItemDetail lista={item} />}
+            {item && <ItemDetail item={item} />}
         </>
     )
 }

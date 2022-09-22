@@ -13,12 +13,12 @@ const Item = ({ title, price, image, description }) => {
             <p className="description">{description}</p>
             <h3 className="price">${price}</h3>
 
-            <div className='itemCount'>
+            {/* <div className='itemCount'>
                 <button onClick={minus} className='botonesStock'><span className='plusMinus'>-</span></button>
                 <p className='count'>{item}</p>
                 <button onClick={plus} className='botonesStock'><span className='plusMinus'>+</span></button>
             </div>
-            <div><button onClick={plus} className='botonPrueba'>Agregar al Carrito</button></div>
+            <div><button onClick={plus} className='botonPrueba'>Agregar al Carrito</button></div> */}
         </div>
     )
 }

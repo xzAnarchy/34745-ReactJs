@@ -5,6 +5,7 @@ const data = [
         category: 'electrodomesticos',
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit',
         price: '100',
+        stock: '5',
         image: 'https://www.mantenimientosfrioinverter.com/wp-content/uploads/2021/08/BLSTKAG-WRD.jpg'
     },
     {
@@ -13,6 +14,7 @@ const data = [
         category: 'electrodomesticos',
         price: '200',
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+        stock: '5',
         image: 'https://www.pngall.com/wp-content/uploads/5/Fridge-PNG-Free-Image.png'
     },
     {
@@ -21,6 +23,7 @@ const data = [
         category: 'computadoras',
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit',
         price: '300',
+        stock: '5',
         image: 'https://www.freepnglogos.com/uploads/computer-png/hardsoftnet-computer-repair-service-miami-laptop-24.png'
     },
     {
@@ -29,6 +32,7 @@ const data = [
         category: 'celulares',
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
         price: '400',
+        stock: '5',
         image: 'https://www.freeiconspng.com/thumbs/iphone-x-pictures/apple-iphone-x-pictures-5.png'
     },
     {
@@ -37,6 +41,7 @@ const data = [
         category: 'computadoras',
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit',
         price: '100',
+        stock: '5',
         image: 'https://www.freepnglogos.com/uploads/computer-png/hardsoftnet-computer-repair-service-miami-laptop-24.png'
     },
 
@@ -46,6 +51,7 @@ const data = [
         category: 'celulares',
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
         price: '200',
+        stock: '5',
         image: 'https://www.freeiconspng.com/thumbs/iphone-x-pictures/apple-iphone-x-pictures-5.png'
     },
     {
@@ -54,6 +60,7 @@ const data = [
         category: 'computadoras',
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit',
         price: '300',
+        stock: '5',
         image: 'https://www.freepnglogos.com/uploads/computer-png/hardsoftnet-computer-repair-service-miami-laptop-24.png'
     },
     {
@@ -62,6 +69,7 @@ const data = [
         category: 'celulares',
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
         price: '400',
+        stock: '5',
         image: 'https://www.freeiconspng.com/thumbs/iphone-x-pictures/apple-iphone-x-pictures-5.png'
     }
 ]

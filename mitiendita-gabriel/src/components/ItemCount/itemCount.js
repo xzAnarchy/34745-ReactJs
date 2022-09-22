@@ -1,16 +1,15 @@
 import './itemCount.css'
-import { useEffect } from 'react';
 
-const ItemCount = ({ setItem, item, stock }) => {
+const ItemCount = ({ setCantidad, cantidad, stock }) => {
 
     const plus = () => {
-        item <= stock - 1
-            ? setItem(item + 1)
+        cantidad < stock
+            ? setCantidad(cantidad + 1)
             : alert('Se alzanzo el stock maximo');
     }
     const minus = () => {
-        !item <= 0
-            ? setItem(item - 1)
+        cantidad > 0
+            ? setCantidad(cantidad - 1)
             : alert('No has seleccionado ningun articulo');
     }
 
@@ -18,10 +17,9 @@ const ItemCount = ({ setItem, item, stock }) => {
         <>
             <div className='itemCount'>
                 <button onClick={minus} className='botonesStock'><span className='plusMinus'>-</span></button>
-                <p className='count'>{item}</p>
+                <p className='count'>{cantidad}</p>
                 <button onClick={plus} className='botonesStock'><span className='plusMinus'>+</span></button>
             </div>
-            <div><button className='botonPrueba'>Agregar al Carrito</button></div>
         </>
     )
 }
