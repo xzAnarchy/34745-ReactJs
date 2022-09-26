@@ -1,17 +1,18 @@
-import React from 'react'
 import Icon from './cartIcon.png'
 import './CartWidget.css'
-// import { useState } from 'react'
-// import ItemCount from '../Button/itemCount'
+import { CartContext } from "../../Context/CartContext"
+import { useContext } from "react"
 
 const CartWidget = () => {
-    // const [cantidad, setCantidad] = useState(0)
-    // const cantidadCarrito = () => {
+    const { cart } = useContext(CartContext)
 
-    // }
+    const cantidadCarrito = () => {
+
+    }
     return (
         <div className='iconoNavBar'>
             <img src={Icon} alt="icono carrito" className='cartIcon' />
+            <span className='cartQuantity'>{cart.length}</span>
         </div>
     )
 }

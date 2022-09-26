@@ -3,6 +3,21 @@
     align-self: center;
     align-items: center;
     box-sizing: border-box;
+    position: relative;
     height: 55px;
     width: 55px;
 }
+
+
+.cartQuantity {
+    color: white;
+    background-color: red;
+    position: absolute;
+    top: 20px;
+    margin-left: 20px;
+    padding: 0 7px;
+    border: solid 2px red;
+    border-radius: 50px;
+    font-weight: bolder;
+}
+

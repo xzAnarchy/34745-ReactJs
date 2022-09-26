@@ -28,3 +28,23 @@
     font-size: 30px;
     font-display: auto;
 }
+
+.link {
+    background-color: #3c414a;
+    text-decoration: none;
+    color: #00ffff;
+    font-weight: bold;
+    border-radius: 16px;
+    border: #3c414a;
+    padding: 3px 9px;
+    transition: all 0.2s ease-out; 
+}
+
+.botones{
+    padding: 10px;
+    margin: 5px;
+    text-align: center;
+    color: #ffffff;
+    background-color: #3ecdcd;
+    border-radius: 90px;
+}

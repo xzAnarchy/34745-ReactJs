@@ -8,9 +8,8 @@ const NavBar = ({ item }) => {
             <ul className='navBarList'>
                 <li>
                     <NavLink
-                        to={"/"}>
+                        to={"/cart"}>
                         <div id='logoNavBar'><CartWidget /></div>
-                        <span className='cartQuantity'>{item}</span>
                     </NavLink>
                 </li>
                 <li>
