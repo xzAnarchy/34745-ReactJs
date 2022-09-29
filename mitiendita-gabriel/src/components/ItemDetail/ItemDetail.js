@@ -3,7 +3,7 @@ import ItemCount from '../ItemCount/itemCount'
 import { useState, useContext } from 'react'
 import { Link } from 'react-router-dom'
 import { CartContext } from '../../Context/CartContext'
-import Cart from '../Cart/Cart'
+
 
 const ItemDetail = ({ item }) => {
     const [cantidad, setCantidad] = useState(1) //Pasa por el itemCount
@@ -12,9 +12,7 @@ const ItemDetail = ({ item }) => {
     const onAdd = (item) => {
         addToCart(item, cantidad)
     }
-    // <Link to={'/cart'}>
-    //     <button>Terminar Compra</button>
-    // </Link>
+
     return (
         <div className="card2">
             <img width={'200px'} height={'200px'} src={item.image} alt={item.title} />

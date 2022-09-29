@@ -20,6 +20,7 @@ const NavBar = ({ item }) => {
                     </NavLink>
                 </li>
                 <li>
+                    {/* definir categorias  que agarrara el useParams*/}
                     <NavLink
                         to={"/category/computadoras"}
                         className={({ isActive }) => (isActive ? 'desactivated' : 'navLink')}>

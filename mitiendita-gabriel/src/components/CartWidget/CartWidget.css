@@ -6,6 +6,7 @@
     position: relative;
     height: 55px;
     width: 55px;
+    -webkit-text-stroke: 0.1px black;
 }
 
 
@@ -21,3 +22,12 @@
     font-weight: bolder;
 }
 
+.nameShop{
+    font-size: 1.5rem;
+    font-weight: bolder;
+    color: white;
+    position: absolute;
+    top: 58px;
+    margin-left: 20px;
+    -webkit-text-stroke: 0.1px black;
+}

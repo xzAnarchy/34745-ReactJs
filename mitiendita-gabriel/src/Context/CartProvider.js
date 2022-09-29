@@ -3,68 +3,51 @@ import { CartContext } from "./CartContext"
 
 export const CartProvider = ({ children }) => {
     const [cart, setCart] = useState([])
+    const [total, setTotal] = useState()
 
-    // Agrego item
     const addToCart = (item, cantidad) => {
-        // 1. Guardo mi producto en un objeto 
-        let cartElement = { item, cantidad }
-        // 2. creo un carrito auxiliar 
-        let cartAux = []
-        // Consulto si el producto esta en el carrito
         if (isInCart(item.id)) {
-            console.log('esta en el carrito')
-            // 1. Busco el producto por el id
-            cartElement = cart.find(element => element.id === item.id)
-            // 2. Actualizo el contador del item filtrado
-            cartElement.cantidad += cantidad;
-            // 3. retorno el carrito tal como estaba
-            cartAux = [...cart]
+            console.log("El producto ya está en el carrito")
+            const newCart = cart.map((cartItem) => {
+                if (cartItem.item.id === item.id) {
+                    return { item, cantidad: cartItem.cantidad + cantidad }
+                } else {
+                    return cartItem
+                }
+            })
+            setCart(newCart)
         } else {
-            console.log('NO ESTA EN EL CARRITO')
-            //1 Agrego el item al carrito 
-            cartAux = [cartElement, ...cart]
+            console.log("El producto no está en el carrito")
+            setCart([...cart, { item, cantidad }])
         }
-        setCart(cartAux)
         console.log(cart)
+        totalCart()
     }
-
-    // const addToCart = (item, cantidad) => {
-    //     if (isInCart(item.id)) {
-    //         setCart(cart.map(producto => {
-    //             return producto.id === item.id ? { ...producto, cantidad: producto.cantidad + cantidad } : console.log(cart)
-    //         }))
-    //     }
-    //     else {
-    //         setCart([...cart, { ...item, cantidad }])
-    //     }
-    //     console.log('cart', cart)
-    // }
 
     const isInCart = (id) => {
-        return cart.some((item) => item.id === id)
+        return cart.some((cartItem) => cartItem.item.id === id)
     }
-    const removeItem = (productId) => {
-        let cartAux = [];
-        cart.forEach(product => {
-            if (product.id !== productId) {
-                cartAux.push(product)
-            }
-        })
-        setCart(cartAux)
-        // let index = cart.findIndex(item => item.id === productId);
-        // cart.splice(index, 1);
-        // console.log(cart);
+
+    const removeItem = (id) => {
+        const newCart = cart.filter((cartItem) => cartItem.item.id !== id)
+        setCart(newCart)
     }
+
     const clear = () => {
         setCart([])
     }
 
     const totalCart = () => {
-        return cart.reduce((previo, actualizado) => previo + actualizado.cantidad * actualizado.price, 0)
+        let totalAux = 0
+        cart.forEach((cartItem) => {
+            totalAux += cartItem.item.price * cartItem.cantidad
+            return totalAux
+        })
+        setTotal(totalAux)
     }
 
     return (
-        <CartContext.Provider value={{ cart, addToCart, removeItem }}>
+        <CartContext.Provider value={{ cart, addToCart, removeItem, totalCart, total }}>
             {children}
         </CartContext.Provider>
     )

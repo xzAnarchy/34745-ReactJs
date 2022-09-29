@@ -15,12 +15,13 @@
 .navLink {
     background-color: #3c414a;
     text-decoration: none;
-    color: #dae3e3;
+    color: #ffffff;
     font-weight: bold;
     border-radius: 16px;
     border: #3c414a;
     padding: 4px 9px;
     transition: all 0.2s ease-out; 
+    -webkit-text-stroke: 0.1px black;
 }
   
 .navLink:hover {

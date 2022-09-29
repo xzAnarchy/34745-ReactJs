@@ -4,17 +4,17 @@ const data = [
         title: 'Licuadora',
         category: 'electrodomesticos',
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit',
-        price: '100',
-        stock: '5',
+        price: 100,
+        stock: 5,
         image: 'https://www.mantenimientosfrioinverter.com/wp-content/uploads/2021/08/BLSTKAG-WRD.jpg'
     },
     {
         id: '2',
         title: 'Nevera',
         category: 'electrodomesticos',
-        price: '200',
+        price: 200,
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-        stock: '5',
+        stock: 5,
         image: 'https://www.pngall.com/wp-content/uploads/5/Fridge-PNG-Free-Image.png'
     },
     {
@@ -22,8 +22,8 @@ const data = [
         title: 'Computadora1',
         category: 'computadoras',
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit',
-        price: '300',
-        stock: '5',
+        price: 300,
+        stock: 5,
         image: 'https://www.freepnglogos.com/uploads/computer-png/hardsoftnet-computer-repair-service-miami-laptop-24.png'
     },
     {
@@ -31,8 +31,8 @@ const data = [
         title: 'Celular1',
         category: 'celulares',
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-        price: '400',
-        stock: '5',
+        price: 400,
+        stock: 5,
         image: 'https://www.freeiconspng.com/thumbs/iphone-x-pictures/apple-iphone-x-pictures-5.png'
     },
     {
@@ -40,8 +40,8 @@ const data = [
         title: 'Computadora2',
         category: 'computadoras',
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit',
-        price: '100',
-        stock: '5',
+        price: 100,
+        stock: 5,
         image: 'https://www.freepnglogos.com/uploads/computer-png/hardsoftnet-computer-repair-service-miami-laptop-24.png'
     },
 
@@ -50,8 +50,8 @@ const data = [
         title: 'Celular2',
         category: 'celulares',
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-        price: '200',
-        stock: '5',
+        price: 200,
+        stock: 5,
         image: 'https://www.freeiconspng.com/thumbs/iphone-x-pictures/apple-iphone-x-pictures-5.png'
     },
     {
@@ -59,8 +59,8 @@ const data = [
         title: 'Computadora3',
         category: 'computadoras',
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit',
-        price: '300',
-        stock: '5',
+        price: 300,
+        stock: 5,
         image: 'https://www.freepnglogos.com/uploads/computer-png/hardsoftnet-computer-repair-service-miami-laptop-24.png'
     },
     {
@@ -68,8 +68,8 @@ const data = [
         title: 'Celular3',
         category: 'celulares',
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-        price: '400',
-        stock: '5',
+        price: 400,
+        stock: 5,
         image: 'https://www.freeiconspng.com/thumbs/iphone-x-pictures/apple-iphone-x-pictures-5.png'
     }
 ]

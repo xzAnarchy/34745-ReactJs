@@ -1,25 +1,27 @@
 import { useEffect, useState } from "react"
 import ItemDetail from "../../components/ItemDetail/ItemDetail"
-import data from "../../components/mockData.js"
 import { useParams } from "react-router-dom"
+import { doc, getFirestore, getDoc } from 'firebase/firestore'
 
 const ItemDetailContainer = () => {
+    // El useParams me devuelve un objeto con los parametros que le paso a la ruta desde el ItemList
     const { id } = useParams()
     const [item, setItem] = useState([])
+    const db = getFirestore()
+
+    const getItem = () => {
+        // con el id que recibo por parametro, busco el producto en la base de datos
+        const queryDoc = doc(db, "items", id)
+        // obtengo el documento
+        getDoc(queryDoc).then(res => {
+            // si existe, lo guardo en el estado
+            setItem(res.data())
+        })
+    }
 
     useEffect(() => {
-        getItem
-            .then((response) => {
-                setItem(response.find(el => el.id === id))
-            })
-            .catch(error => console.log(error))
-    }, []);
-
-    const getItem = new Promise((resolve, reject) => {
-        setTimeout(() => {
-            resolve(data)
-        }, 2000);
-    })
+        getItem()
+    }, [id]);
 
     return (
         <>

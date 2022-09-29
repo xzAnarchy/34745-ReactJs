@@ -15,9 +15,12 @@ function App() {
           <BrowserRouter>
             <NavBar />
             <img src={logo} className="App-logo" alt="logo" />
+            {/* Inicializo mis Rutas */}
             <Routes>
               <Route path="/" element={<ItemListContainer />} />
               <Route path="contacto" element={<div>Contact</div>} />
+              {/* Las rutas con : esperan un parametro,
+               que se guarda con el useParams del ItemListContainer cuando seleccionas categoria en el navbar */}
               <Route path='detail/:id' element={<ItemDetailContainer />} />
               <Route path="category/:categoryName" element={<ItemListContainer />} />
               <Route path='cart/' element={<Cart />} />
