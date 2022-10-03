@@ -15,7 +15,8 @@ const ItemDetailContainer = () => {
         // obtengo el documento
         getDoc(queryDoc).then(res => {
             // si existe, lo guardo en el estado
-            setItem(res.data())
+            setItem({ id: res.id, ...res.data() })
+            console.log(item)
         })
     }
 

@@ -6,11 +6,12 @@ import { CartContext } from '../../Context/CartContext'
 
 
 const ItemDetail = ({ item }) => {
-    const [cantidad, setCantidad] = useState(1) //Pasa por el itemCount
-    const { addToCart, cart } = useContext(CartContext)
+    const [quantity, setQuantity] = useState(1) //Pasa por el itemCount
+    const { addToCart, cart, totalCart } = useContext(CartContext)
 
     const onAdd = (item) => {
-        addToCart(item, cantidad)
+        addToCart(item, quantity)
+        totalCart()
     }
 
     return (
@@ -20,7 +21,7 @@ const ItemDetail = ({ item }) => {
             <p className="description">{item.description}</p>
             <h3 className="price">${item.price}</h3>
             <h3 className="price">Stock Disponible: {item.stock}</h3>
-            <ItemCount stock={item.stock} cantidad={cantidad} setCantidad={setCantidad} />
+            <ItemCount stock={item.stock} quantity={quantity} setQuantity={setQuantity} />
             <div>
                 <button className='botones' onClick={() => onAdd(item)}>Agregar al Carrito</button>
             </div>
