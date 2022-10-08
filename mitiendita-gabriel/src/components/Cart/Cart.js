@@ -1,57 +1,87 @@
-import { useContext } from "react"
-import { Link } from "react-router-dom"
+import { useContext, useState } from "react"
+import { Link, Navigate } from "react-router-dom"
 import { CartContext } from "../../Context/CartContext"
 import './Cart.css'
 import moment from 'moment'
-import { collection, addDoc, getFirestore, doc, getDoc, updateDoc, deleteDoc } from 'firebase/firestore'
+import { collection, addDoc, getFirestore, doc, updateDoc } from 'firebase/firestore'
+import { useNavigate } from "react-router-dom"
+import { clear } from "@testing-library/user-event/dist/clear"
 
 const Cart = () => {
+    const navigate = useNavigate()
     const { cart, removeItem, total } = useContext(CartContext)
-    console.log('cart', cart)
+    const [order, setOrder] = useState({
+        buyer: {
+            name: '',
+            phone: 0,
+            email: ''
+        },
+        items: cart,
+        total: cart.reduce((acc, item) => acc + item.price * item.quantity, 0),
+        date: moment().format('DD/MM/YYYY, h:mm:ss a')
+    })
 
+    // console.log('cart', cart)
     const db = getFirestore()
 
     const createOrder = () => {
-        const order = {
-            buyer: {
-                name: 'Juan',
-                phone: '123456789',
-                email: 'test@test.com'
-            },
-            items: cart,
-            total: cart.reduce((acc, item) => acc + item.price * item.quantity, 0),
-            date: moment().format()
-        }
+        setOrder((currentOrder) => {
+            return {
+                ...currentOrder,
+                items: cart,
+                total: cart.reduce((acc, item) => acc + item.price * item.quantity, 0),
+                date: moment().format('DD/MM/YYYY, h:mm:ss a')
+            }
+        })
+        // Guardamos la orden en la colección 'orders'
         const query = collection(db, 'orders')
+        // Ejecutamos la operación de escritura en la base de datos
         addDoc(query, order)
             .then(({ id }) => {
                 console.log(id);
+                // Actualizamos el stock de los productos
+                updateStockProducts()
                 alert('Orden creada con exito');
             })
             .catch((error) => alert('Hubo un error con tu orden, intenta mas tarde', error))
-
     }
 
-    const updateOrder = () => {
-        const idOrder = '5LJmuoAdsRV4nrxdHanZ'
-        const order = {
-            buyer: {
-                name: 'Juan',
-                phone: '123456789',
-                email: 'test@test.com'
-            },
-            items: cart.pop(),
-            total: cart.reduce((acc, item) => acc + item.price * item.quantity, 0),
-            date: moment().format()
-        }
-        const queryUpdate = doc(db, 'orders', idOrder)
-        updateDoc(queryUpdate, order)
-            .then((res) => {
-                console.log(res);
-                alert('Orden actualizada con exito');
-            })
-            .catch((error) => alert('Hubo un error con tu orden, intenta mas tarde', error))
+    const updateStockProducts = () => {
+        cart.forEach((item) => {
+            const queryUpdate = doc(db, 'items', item.id)
+            updateDoc(queryUpdate, {
+                category: item.category,
+                description: item.description,
+                image: item.image,
+                price: item.price,
+                title: item.title,
+                stock: item.stock - item.quantity
+            }).then(() => {
+                console.log('Stock actualizado');
+                // Vaciamos el carrito
+                clear()
+                // Redireccionamos al home
+                navigate('/')
+            }
+            ).catch((error) => alert('Hubo un error al actualizar el stock', error))
+        })
     }
+
+    const handleInputChange = (e) => {
+        console.log(e.target);
+        setOrder((currentOrder) => {
+            return {
+                ...currentOrder,
+                buyer: {
+                    ...currentOrder.buyer,
+                    [e.target.name]: e.target.value
+                }
+            }
+        })
+    }
+
+
+
 
     return (
         <div>
@@ -64,9 +94,20 @@ const Cart = () => {
                     </>
                 ) : (<>
                     <div>
-                        <h3>Monto total en el carrito: </h3>
-                        <h3>${total}</h3>
+                        <label>Nombre: </label>
+                        <input type="text" name="name" value={order.buyer.name} onChange={handleInputChange} />
                     </div>
+                    <br />
+                    <div>
+                        <label>Telefono: </label>
+                        <input type="number" name="phone" value={order.buyer.phone} onChange={handleInputChange} />
+                    </div>
+                    <br />
+                    <div>
+                        <label>Email: </label>
+                        <input type="email" name="email" value={order.buyer.email} onChange={handleInputChange} />
+                    </div>
+                    <br />
                     <div className='cartContainer'>
                         {cart.map((product) => (
                             <div key={product.id} className="cartCards">
@@ -84,7 +125,6 @@ const Cart = () => {
                 )}
             <div>
                 <button onClick={createOrder}>Terminar Compra</button>
-                <button onClick={updateOrder}>Actualizar Orden</button>
             </div>
         </div >
     )
