@@ -52,6 +52,7 @@ const Cart = () => {
                 console.log(id);
                 // Actualizamos el stock de los productos
                 updateStockProducts()
+                notify()
             })
     }
 
@@ -69,7 +70,6 @@ const Cart = () => {
                 console.log('Stock actualizado');
                 // Vaciamos el carrito
                 clear()
-                notify()
             }
             ).catch((error) => alert('Hubo un error al actualizar el stock', error))
         })
